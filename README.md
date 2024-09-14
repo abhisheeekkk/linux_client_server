@@ -32,6 +32,8 @@ Open another terminal and run
 >>python3 client.py
 ![client](https://github.com/user-attachments/assets/868a3a13-bfaf-4098-a243-0143d5132a07)
 
+
+Please note that, all the logs for client code will be stored in client.log file and for server code the log file will be stored in server.log file in the same directory.
 -------------------------------------------------------------------------------------------
 
 Step-5:
