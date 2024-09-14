@@ -2,16 +2,21 @@
 # Mail: abhishekshukla9586@gmail.com
 
 import socket
+import logging
 
 # Configuration
 PORT = 65432  # Port number on which the server is listening. Must match the server port.
 SERVER_ADDRESS = '127.0.0.1'  # The address of the server. '127.0.0.1' refers to the local machine.
+
+# Set up logging
+logging.basicConfig(filename='client.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def main():
     # Create a TCP/IP socket
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         # Connect the socket to the server address and port
         s.connect((SERVER_ADDRESS, PORT))
+        logging.info(f'Connected to server at {SERVER_ADDRESS}:{PORT}')
         
         while True:
             # Prompt the user to choose an operation
@@ -30,6 +35,7 @@ def main():
             else:
                 # Inform the user of invalid choice and exit the loop
                 print("Invalid choice. Run program again.")
+                logging.warning('Invalid choice entered by user.')
                 break
 
             # Get the string input from the user
@@ -37,6 +43,7 @@ def main():
             
             # Create the request string with command and payload
             request = f"{command} {payload}"
+            logging.info(f'Sending request: {request}')
             
             # Send the request to the server
             s.sendall(request.encode())
@@ -46,6 +53,7 @@ def main():
             
             # Display the server's response
             print(f"Server response: {response}")
+            logging.info(f'Received response: {response}')
 
 # Execute the main function if this script is run directly
 if __name__ == '__main__':

@@ -3,9 +3,13 @@
 
 import socket
 import base64
+import logging
 
 # Configuration
 PORT = 65432  # Non-standard port where the server will listen for incoming connections
+
+# Set up logging
+logging.basicConfig(filename='server.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def handle_client(conn):
     """
@@ -15,8 +19,10 @@ def handle_client(conn):
         conn (socket.socket): The socket object representing the client connection.
     """
     with conn:
-        # Print the address of the client that has connected
-        print('Connected by', conn.getpeername())
+        # Print and log the address of the client that has connected
+        client_address = conn.getpeername()
+        logging.info(f'Connected by {client_address}')
+        print('Connected by', client_address)
         
         while True:
             # Receive data from the client, up to 1024 bytes
@@ -24,6 +30,7 @@ def handle_client(conn):
             
             # Break the loop if no data is received (client has disconnected)
             if not data:
+                logging.info(f'Client {client_address} disconnected.')
                 break
             
             # Split the received data into command and payload
@@ -39,6 +46,11 @@ def handle_client(conn):
             else:
                 # Handle unknown commands
                 response = 'Unknown command'
+                logging.warning(f'Unknown command received: {command}')
+            
+            # Log the received data and the response being sent
+            logging.info(f'Received data: {data}')
+            logging.info(f'Sending response: {response}')
             
             # Send the response back to the client
             conn.sendall(response.encode())
@@ -55,7 +67,8 @@ def server():
         # Enable the server to accept incoming connections
         s.listen()
         
-        # Print a message indicating that the server has started
+        # Print and log a message indicating that the server has started
+        logging.info(f'Server started on port {PORT}')
         print(f'Server started on port {PORT}')
         
         while True:

@@ -1,0 +1,12 @@
+2024-09-14 12:28:59,483 - INFO - Connected to server at 127.0.0.1:65432
+2024-09-14 12:29:01,862 - INFO - Sending request: UPPERCASE ad
+2024-09-14 12:29:01,862 - INFO - Received response: AD
+2024-09-14 12:29:04,701 - INFO - Sending request: BASE64 fg
+2024-09-14 12:29:04,702 - INFO - Received response: Zmc=
+2024-09-14 12:29:06,940 - WARNING - Invalid choice entered by user.
+2024-09-14 12:30:12,108 - INFO - Connected to server at 127.0.0.1:65432
+2024-09-14 12:30:14,525 - INFO - Sending request: UPPERCASE kk
+2024-09-14 12:30:14,526 - INFO - Received response: KK
+2024-09-14 12:30:17,821 - INFO - Sending request: BASE64 sdf
+2024-09-14 12:30:17,822 - INFO - Received response: c2Rm
+2024-09-14 12:30:19,900 - WARNING - Invalid choice entered by user.

@@ -1,0 +1,7 @@
+2024-09-14 12:30:07,963 - INFO - Server started on port 65432
+2024-09-14 12:30:12,107 - INFO - Connected by ('127.0.0.1', 50436)
+2024-09-14 12:30:14,526 - INFO - Received data: UPPERCASE kk
+2024-09-14 12:30:14,526 - INFO - Sending response: KK
+2024-09-14 12:30:17,821 - INFO - Received data: BASE64 sdf
+2024-09-14 12:30:17,821 - INFO - Sending response: c2Rm
+2024-09-14 12:30:19,903 - INFO - Client ('127.0.0.1', 50436) disconnected.
