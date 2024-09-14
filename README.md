@@ -25,9 +25,12 @@ Step-4:
 
 In first terminal run 
 >>python3 server.py
+![server](https://github.com/user-attachments/assets/a954f5e8-2be0-43f1-b166-3f838d383551)
+
 
 Open another terminal and run
 >>python3 client.py
+![client](https://github.com/user-attachments/assets/868a3a13-bfaf-4098-a243-0143d5132a07)
 
 -------------------------------------------------------------------------------------------
 
@@ -59,5 +62,9 @@ Choose an operation:
 
 Enter choice (1/2): 5
 Invalid choice. Run program again.
+![client](https://github.com/user-attachments/assets/7fd16c31-70dc-4bd5-86ed-b21fe34410ec)
+
+
+
 
 Please mail me at abhishekshukla9586@gmail.com if you have any doubts at all!
